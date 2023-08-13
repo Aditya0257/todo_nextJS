@@ -35,7 +35,7 @@ const Todos = async () => {
   const token = authToken?.value;
   if (!token) return redirect("/login");
   const tasks = await fetchTodo(token);
-  redirect('/');
+  
 
   return (
     <section className="todosContainer">
