@@ -30,11 +30,17 @@ export const ContextProvider = ({ children }) => {
   // }, []);
   useEffect(() => {
     fetch("/api/auth/me")
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.success) setUser(data.user);
-      });
-  }, []);
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                setUser(data.user);
+            }
+        })
+        .catch(error => {
+            console.error(error);
+            // Handle the error, e.g., show an error message.
+        });
+}, []);
 
   return (
     <Context.Provider
