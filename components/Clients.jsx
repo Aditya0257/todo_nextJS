@@ -14,7 +14,7 @@ export const ContextProvider = ({ children }) => {
   useEffect(() => {
     async function fetchUserData() {
       try {
-        const res = await fetch("api/auth/me");
+        const res = await fetch("/api/auth/me");
         const data = await res.json(); // taking JSON as input and parsing it to produce a JavaScript object.
 
         if (data.success) {
