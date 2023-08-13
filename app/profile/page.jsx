@@ -2,10 +2,7 @@ import React from "react";
 import ProfileCard from "../profileCard";
 
 const Page = () => {
-  return <div>
-    <ProfileCard />
-    
-    </div>;
+  return <ProfileCard />;
 };
 
 export const metadata = {
