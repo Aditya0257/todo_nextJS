@@ -1,17 +1,17 @@
 import React, { Suspense } from "react";
 import Form from "./addTodoForm";
 import Todos from "./todos";
+import Loading from "./loading";
 
 const page =  () => {
   
   return (
     <div className="container">
       <Form />
-      <Suspense fallback = {<div>Loading...</div>}> 
+      <Suspense fallback = {<Loading />}> 
       <Todos />
-      </Suspense> {/* Suspense is for handling asynchronous function calls at server side with a fallback */}
+      </Suspense> 
        
-      
     </div>
   );
 };
