@@ -17,9 +17,13 @@ export const ContextProvider = ({ children }) => {
         if (data.success) {
           setUser(data.user);
         }
+        else
+        {
+          console.log("no user data yet, should login!")
+        }
       })
       .catch((error) => {
-        console.error(error);
+        console.log(error);
       });
   }, []);
 

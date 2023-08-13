@@ -34,6 +34,7 @@ function Page() {
       return toast.error(error);
     }
   };
+  console.log("going to run redirect to homepage from login...")
 
   if (user._id) return redirect("/");
 
