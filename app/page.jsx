@@ -8,9 +8,9 @@ const page =  () => {
   return (
     <div className="container">
       <Form />
-      <Suspense fallback = {<Loading />}> 
+      {/* <Suspense fallback = {<Loading />}>  */}
       <Todos />
-      </Suspense> 
+      {/* </Suspense>  */}
        
     </div>
   );
