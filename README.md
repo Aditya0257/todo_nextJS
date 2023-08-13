@@ -1,5 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+# Learning basic of Next JS, through a TODO Application with Mongo DB.
+
 ## My Hosted Application
 Check out my hosted application [here](https://todo-next-js-six.vercel.app/).
 
