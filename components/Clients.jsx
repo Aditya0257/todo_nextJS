@@ -10,37 +10,18 @@ export const Context = createContext({ user: {} });
 
 export const ContextProvider = ({ children }) => {
   const [user, setUser] = useState({});
-
-  // useEffect(() => {
-  //   async function fetchUserData() {
-  //     try {
-  //       const res = await fetch("/api/auth/me");
-  //       const data = await res.json(); // taking JSON as input and parsing it to produce a JavaScript object.
-
-  //       if (data.success) {
-  //         setUser(data.user);
-  //       }
-  //     } catch (error) {
-  //       console.log(error);
-  //       return toast.error(error);
-  //     }
-  //   }
-
-  //   fetchUserData();
-  // }, []);
   useEffect(() => {
     fetch("/api/auth/me")
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                setUser(data.user);
-            }
-        })
-        .catch(error => {
-            console.error(error);
-            // Handle the error, e.g., show an error message.
-        });
-}, []);
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          setUser(data.user);
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
   return (
     <Context.Provider

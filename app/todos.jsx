@@ -3,13 +3,12 @@ import React from "react";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
-
 const fetchTodo = async (token) => {
     try {
       const res = await fetch(`${process.env.URL}/api/mytask`, { // server component, so we start api url with process.env
         cache: "no-cache", // SSR
         headers: {
-          cookie: `auth_token=${token}`,  // for checking credentials at server side, here useContext wont work, as it is for client side components in react code
+          cookie: `auth_token=${token}`, // for checking credentials at server side, here useContext wont work, as it is for client side components in react code
         },
       });
   
