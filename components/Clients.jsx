@@ -3,8 +3,10 @@
 import Link from "next/link";
 import { useState, createContext, useContext, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import '../styles/app.scss';
 
 import { Toaster, toast } from "react-hot-toast";
+import RefreshIcon from "@mui/icons-material/Refresh";
 
 export const Context = createContext({ user: {} });
 
@@ -16,10 +18,8 @@ export const ContextProvider = ({ children }) => {
       .then((data) => {
         if (data.success) {
           setUser(data.user);
-        }
-        else
-        {
-          console.log("no user data yet, should login!")
+        } else {
+          console.log("no user data yet, should login!");
         }
       })
       .catch((error) => {
@@ -106,3 +106,22 @@ export const TodoBtn = ({ id, completed }) => {
     </>
   );
 };
+
+const RefreshBtn = () => {
+  const router = useRouter();
+
+  const handleRefresh = () => {
+    router.refresh();
+    return toast.success("refreshing tasks...");
+  }
+  return (
+    <div className="refreshButton">
+      <RefreshIcon
+        className="refreshIcon"
+        onClick={() => handleRefresh()}
+      />
+    </div>
+  );
+};
+
+export default RefreshBtn;

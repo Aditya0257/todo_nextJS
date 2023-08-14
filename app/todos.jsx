@@ -2,6 +2,7 @@ import { TodoItem } from "@/components/ServerComponents";
 import React from "react";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import RefreshBtn from "@/components/Clients";
 
 const fetchTodo = async (token) => {
   try {
@@ -39,6 +40,7 @@ const Todos = async () => {
 
   return (
     <section className="todosContainer">
+      <RefreshBtn />
       {tasks?.map((task) => (
         <TodoItem
           key={task._id}

@@ -15,6 +15,22 @@
 @import "profile";
 @import "mediaquery";
 
+.refreshButton{
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 100px;
+  background-color: white;
+  .refreshIcon{
+    font-size: 44px;
+  }
+
+  &:hover{
+    background-color: whitesmoke;
+  }
+}
+
+
+
 a {
   text-decoration: none;
   color: $color3;
